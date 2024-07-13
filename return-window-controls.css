@@ -9,6 +9,7 @@ total button size
 (optional) flip button order
 when in fullscreen mode
 macos layout
+linux button corrections
 linux kde layout
 linux gnome layout (compatible with cinnamon)
 
@@ -213,7 +214,8 @@ toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 } 
 
 /*------------------------------------------------------------------------*/
-/* Gnome window controls */
+
+/* linux gnome layout (compatible with cinnamon) */
 
 @media (-moz-bool-pref: "OS.gnome") {
 @media (-moz-platform: linux), (-moz-os-version: linux) {
