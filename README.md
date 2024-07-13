@@ -7,7 +7,10 @@ The premise, is a 1 file solution to return Window Controls through one manageme
 
 To use this resource file, simply `import` it within the `userchrome.css` of your theme. And place the return-window-controls.css in an appropriate directory.
 
-### Key notes.
+![2024-07-13_16-09](https://github.com/user-attachments/assets/9e041cb3-e560-477f-b4d3-5e10a5849761)
+
+
+### Key notes:
 - Mac OS compatibility is automatically handled through an OS media query.
 - Linux compatibility should require the user to apply a `user.js` file.
   - Linux compatibility is dependant on several factors such as DE and window decoration/theme application.
@@ -18,3 +21,6 @@ To use this resource file, simply `import` it within the `userchrome.css` of you
   - For creators that alter the navigation bar color, you can simple add that main background color to --toolbar-bgcolor.
   - If you alter the navigation bar to be rgb(15,15,15) or to be var(--my-custom-variable), simply set --toolbar-bgcolor as `--toolbar-bgcolor: var(--my-custom-variable) !important` or `--toolbar-bgcolor: rgb(15,15,15) !important`.
 
+Theme Integration:
+- See, FF Ultima, a theme with windows, mac, linux support: https://github.com/soulhotel/FF-ULTIMA
+- See, example, example: 
