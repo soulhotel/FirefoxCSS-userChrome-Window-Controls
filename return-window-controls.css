@@ -104,10 +104,129 @@ toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
     }
 }
 
+
 /*--------------------------------------------------------------------------------------*/
+
+/* linux button corrections */
+
+@media (-moz-platform: linux), (-moz-os-version: linux) {
+
+    /* update nav bar spacing */
+    #nav-bar {margin-right: 86px !important;}
+    
+    /* override inactive window style */
+    :root:where([tabsintitlebar]) {
+        --toolbox-non-lwt-textcolor: var(--uc-text);
+        --toolbox-non-lwt-textcolor-inactive: var(--uc-text);
+    } :root {
+        --inactive-titlebar-opacity: 1 !important;
+    }
+
+    /* remove secondary background, and correct stroke */
+    #main-window:not([lwtheme]) .titlebar-button {
+        stroke: initial !important;
+    } #main-window[lwtheme] .titlebar-button {
+        stroke: var(--toolbarbutton-icon-fill) !important;
+    }
+    #main-window:not([lwtheme]) .titlebar-button:hover {
+        fill: initial !important;
+    } #main-window[lwtheme] .titlebar-button:hover {
+        fill: black !important;
+    }
+    
+}
+
+/*------------------------------------------------------------------------*/
 
 /* linux kde layout */
 
-/*--------------------------------------------------------------------------------------*/
+@media (-moz-bool-pref: "OS.kde") {
+@media (-moz-platform: linux), (-moz-os-version: linux) {
 
-/* linux gnome layout (compatible with cinnamon) */
+    :root[tabsintitlebar] {
+        .titlebar-buttonbox {
+            top: 7px !important;
+            right: 5px !important;
+        }
+        &[uidensity="compact"] .titlebar-buttonbox {
+            top: 4px !important;
+        }
+    }
+    
+    .titlebar-button, .titlebar-button[lwtheme] {
+        appearance: none !important;
+        margin: 0 !important;
+        margin-top: 0px !important;
+        padding: 4px 4px !important;
+        justify-content: center !important;
+        color: inherit !important;
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: var(--toolbarbutton-icon-fill) !important;
+        stroke: var(--toolbarbutton-icon-fill) !important;
+        border-radius: 5px !important;
+    }
+    
+    .titlebar-button .toolbarbutton-icon,
+    .titlebar-button[lwtheme] .toolbarbutton-icon,
+    .titlebar-button[lwtheme] .toolbarbutton-icon[lwtheme] {
+        border-radius: var(--toolbarbutton-border-radius) !important;
+        list-style-image: url("chrome://global/skin/icons/arrow-down.svg");
+        opacity: 1 !important;
+        padding: 3px !important;
+    }
+
+    /* icons override, default icons dont override when there is window inactivity */
+    .titlebar-button.titlebar-close .toolbarbutton-icon{
+        list-style-image: url("icons/lin-close.svg") !important;
+        margin-top: -1px !important;
+    }
+    .titlebar-button.titlebar-min .toolbarbutton-icon{
+        list-style-image: url("icons/lin-min.svg") !important;
+        margin-top: -1px !important;
+    }
+    .titlebar-button.titlebar-max .toolbarbutton-icon{
+        list-style-image: url("icons/lin-max.svg") !important;
+        margin-top: -1px !important;
+    }
+    .titlebar-button.titlebar-restore .toolbarbutton-icon{
+        list-style-image: url("icons/lin-restore.svg") !important;
+        margin-top: -1px !important;
+    }
+
+    /* override background changes when hovered */
+    #main-window .titlebar-button:hover,    
+    #main-window:not([lwtheme]) .titlebar-button:hover {
+        background-color: transparent !important;
+        border-radius: 5px;
+    } .titlebar-close:hover {
+        background-color: rgb(191, 66, 66) !important;
+    }
+    
+    /*--override padding--*/
+    .titlebar-button > .toolbarbutton-icon[lwtheme] {
+        padding: 4px 4px !important;
+        -moz-context-properties: revert !important;
+        stroke: currentColor;
+        border-radius: 5px;
+    }
+}
+} 
+
+/*------------------------------------------------------------------------*/
+/* Gnome window controls */
+
+@media (-moz-bool-pref: "OS.gnome") {
+@media (-moz-platform: linux), (-moz-os-version: linux) {
+
+    #nav-bar {margin-right: 100px !important;}
+    
+    :root[tabsintitlebar] .titlebar-buttonbox {
+        top: 8px !important;
+        right: 5px !important;
+    }
+    :root .titlebar-button:hover {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+}
+}
