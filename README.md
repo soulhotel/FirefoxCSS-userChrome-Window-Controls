@@ -14,7 +14,7 @@ To use this resource file, simply `import` it within the `userchrome.css` of you
   - To treat this, they have 3 options within `user.js` + `about:config` to select what their DE is, and filter through different positioning setups.
   - Linux users should be comfortable enough with this process, due to the terminal centric nature of the OS.
   - Or the theme creator can supply seperate modified return-window-control.css files for the linux users, but this approach is work for the creator.
-- The #navigator-toolbox element is enforced to be the --toolbar-bgcolor variable.
+- The #navigator-toolbox element is enforced to use the --toolbar-bgcolor variable as it's background color.
   - For creators that alter the navigation bar color, you can simple add that main background color to --toolbar-bgcolor.
   - If you alter the navigation bar to be rgb(15,15,15) or to be var(--my-custom-variable), simply set --toolbar-bgcolor as `--toolbar-bgcolor: var(--my-custom-variable) !important` or `--toolbar-bgcolor: rgb(15,15,15) !important`.
 
