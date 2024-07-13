@@ -8,12 +8,11 @@
   --u-nav-background: [insert-color-or-variable] !important;
 }
 
-#navigator-toolbox {
-  background: var(---u-nav-background) !important;
-}
-
 */
 
+#navigator-toolbox {
+  background: var(--toolbar-bgcolor) !important;
+}
 
 #TabsToolbar { display: none !important; }
 
@@ -56,13 +55,14 @@ toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 
 /* adjust nav bar margin */
 #nav-bar {
-    margin-right: 96px; /* margin-left if you have it on left side*/
+    margin-right: 98px; /* margin-left if you have it on left side*/
 } 
 
 /* 30px total button size to match toolbar buttons. */
 @media (-moz-platform: windows) {
     .titlebar-buttonbox .titlebar-button {
         padding: 11px 11px !important;
+        border-radius: 5px !important;
     }
 }
 
