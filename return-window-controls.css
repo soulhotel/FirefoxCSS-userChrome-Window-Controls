@@ -1,17 +1,25 @@
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* Set your navigation bar color here:
-(example) --u-nav-background: rgb(1,1,1) !important;
-(example) --u-nav-background: var(--your-predefined-variable) !important;
+/* Index [ctrl+f to find a section]
 
-* {
-  --u-nav-background: [insert-color-or-variable] !important;
-}
+baseline modifications (configure nav bar color here if needed)
+to return the title bar buttons
+adjust nav bar margin
+total button size
+(optional) flip button order
+when in fullscreen mode
+macos layout
+linux kde layout
+linux gnome layout (compatible with cinnamon)
 
-*/
+/*-------------------------------------------------------------------------------------*/
+
+/* baseline modifications (configure nav bar color here if needed) */
 
 #navigator-toolbox {
   background: var(--toolbar-bgcolor) !important;
+  /*background: var(--your-own-variable) !important;*/
+  /*background: rgb(1,1,1) !important;*/
 }
 
 #TabsToolbar { display: none !important; }
@@ -23,8 +31,6 @@
     -moz-appearance: none !important;
     --tabs-navbar-shadow-size: 0px;
 }
-
-/* some code related code blocks */
 
 #navigator-toolbox > div{ display: contents }
 
@@ -40,7 +46,9 @@ toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 
 #navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog; }
 
+
 /*--------------------------------------------------------------------------------------*/
+
 /* to return the title bar buttons */
 
 :root[tabsintitlebar] .titlebar-buttonbox{
@@ -74,3 +82,32 @@ toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 :root[inFullscreen="true"] #navigator-toolbox:not(:hover) .titlebar-buttonbox {
     display: none !important;
 }
+
+
+/*--------------------------------------------------------------------------------------*/
+
+/* macos layout */
+
+@media (-moz-os-version: macos), (-moz-platform: macos) {
+    #nav-bar {
+        margin-left: 84px !important;
+        margin-right: 0px !important;
+    }    
+
+    :root[tabsintitlebar] .titlebar-buttonbox {
+        top: 12px !important;
+        right: unset !important;
+        left: 3px !important;
+    }
+    toolbar {
+        min-height: 0px !important;
+    }
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+/* linux kde layout */
+
+/*--------------------------------------------------------------------------------------*/
+
+/* linux gnome layout (compatible with cinnamon) */
