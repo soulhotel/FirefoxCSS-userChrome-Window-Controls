@@ -1,6 +1,8 @@
-## This Repository serves as a resource file for the FirefoxCSS community.
+###### :accessibility: This Repository serves as a resource file for Firefox userChrome themers.
 
-The premise of this repository, is a solution - for theme creators who attempt to create one-line navigation-bar themes. These themes typically remove the titlebar, thus losing access to Window Control Buttons. We can solve this through the use of a management file; With additional compatibility for linux and mac users.
+### <ins>The Premise</ins>
+
+A pre-configured solution - for theme creators who attempt to create one-line navigation-bar themes. These themes typically remove the titlebar, thus losing access to Window Control Buttons. We can solve this through the use of a management file; With additional compatibility for linux and mac users.
 
 ### <ins>return-window-controls.css</ins>
 
@@ -14,6 +16,7 @@ To use this in your theme:
 
 
 ### <ins>Additional Information</ins>
+###### :warning: the info below is conditional to my predefined styling, this resource file can definitely be altered to your desired outcome and even improved upon.
 - Mac OS compatibility is automatically handled through an OS media query.
 - Linux compatibility should require the user to apply a `user.js` file.
   - Linux compatibility is dependant on several factors such as DE and window decoration/theme application.
